@@ -1,5 +1,17 @@
 # ProofLens AI progress
 
+## October 14, 2026 — Authorized parallel local development
+- Read all five instruction files and inspected Git state/history/ignore rules before modifications.
+  No unknown user changes found: prior session files were untracked, with no commits.
+- Baseline rerun: 42 tests passed in 2.01 s; unchanged four-case image smoke gate passed.
+- Reviewed and checkpointed project files as 299543a; contracts/policies as 40f86fb.
+- Native subagents and worktrees available: three real workers running on worker/video-engine,
+  worker/evaluation, worker/inspection-agent under Downloads/prooflens-worktrees.
+- Lead branch integration/local-inspection owns catalog, integration, planning and final review.
+- Added APPROVAL_POLICY.md and APPROVALS.md; no main/cloud/push/credential action approved or attempted.
+- Lead QR/manual trusted catalog tests: 5 passed in 0.28 s; no authenticity claim.
+- Existing historical stop rules above are superseded by this user authorization. Final results follow below.
+
 ## October 14, 2026 — Video-first specification upgrade (before implementation)
 - Updated AGENTS.md, PRODUCT_SPEC.md, PLAN.md and EVAL_SPEC.md for warehouse video returns,
   P0/P1/P2 priorities, source-grouped evaluation and immediate video-only acceptance.
