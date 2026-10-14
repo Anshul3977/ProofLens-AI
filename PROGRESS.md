@@ -7,6 +7,11 @@
   video/images and .venv remain ignored, and reviewed tracked file list before push.
 - Publication will use a main branch at the verified integration history; worker branches/worktrees retained.
 - Last executed complete tests remain 92 passing plus all three gates; only approval/progress docs change.
+- Created local main at verified integration history. Initial push rejected by GitHub because the active
+  OAuth login has repo/read:org/gist scopes but lacks workflow scope required for .github/workflows/ci.yml.
+  Remote still has no refs; publication has not succeeded. CI retained.
+- Authentication fix: `gh auth refresh -h github.com -s workflow`, then `git push -u origin main`.
+  User must complete GitHub's permission grant; no credential values were retrieved or committed.
 
 ## October 14, 2026 — Authorized parallel local development
 - Read all five instruction files and inspected Git state/history/ignore rules before modifications.
