@@ -1,0 +1,10 @@
+{
+  "dataset_id": "phase1-synthetic-v1",
+  "provenance": "Self-created deterministic geometric images; no customer photographs",
+  "cases": [
+    {"id": "matching", "expected_status": "DIFFERENCES_AVAILABLE", "expected_regions": false},
+    {"id": "perspective", "expected_status": "DIFFERENCES_AVAILABLE", "expected_regions": false},
+    {"id": "modified", "expected_status": "DIFFERENCES_AVAILABLE", "expected_regions": true},
+    {"id": "blurry", "expected_status": "QUALITY_INSUFFICIENT", "expected_regions": false}
+  ]
+}

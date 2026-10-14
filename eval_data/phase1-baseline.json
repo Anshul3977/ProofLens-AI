@@ -1,0 +1,52 @@
+{
+  "scope": "phase1_synthetic_smoke",
+  "dataset_id": "phase1-synthetic-v1",
+  "dataset_sha256": "281bd14062dbb0e56bd03155a1712de43a4ba835aa2f4c988156ed5208368499",
+  "generator_sha256": "709d61bde4ec08f039a03917b6c16815454dce7ba6b8467549e571a8afc4cc4f",
+  "settings_sha256": "34ac1b96374c74a7f4182d8eac8a2cf87a7b58716681968b3ecc3d7ddd9371ad",
+  "opencv": "5.0.0",
+  "python": "3.13.2",
+  "cases": [
+    {
+      "id": "matching",
+      "status": "DIFFERENCES_AVAILABLE",
+      "regions_present": false,
+      "passed": true,
+      "latency_ms": 746.5929000172764
+    },
+    {
+      "id": "perspective",
+      "status": "DIFFERENCES_AVAILABLE",
+      "regions_present": false,
+      "passed": true,
+      "latency_ms": 74.9484000261873
+    },
+    {
+      "id": "modified",
+      "status": "DIFFERENCES_AVAILABLE",
+      "regions_present": true,
+      "passed": true,
+      "latency_ms": 66.1981999874115
+    },
+    {
+      "id": "blurry",
+      "status": "QUALITY_INSUFFICIENT",
+      "regions_present": false,
+      "passed": true,
+      "latency_ms": 12.359699991066009
+    }
+  ],
+  "passed_cases": 4,
+  "total_cases": 4,
+  "latency_ms": {
+    "median": 70.5733000067994,
+    "p95": 645.8462250186128
+  },
+  "unavailable_metrics": [
+    "agent_actions",
+    "agent_vs_fixed_baseline",
+    "real_photo_accuracy",
+    "region_IoU",
+    "holdout_performance"
+  ]
+}
