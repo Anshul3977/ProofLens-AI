@@ -1,4 +1,5 @@
 import json
+from dataclasses import replace
 from pathlib import Path
 
 import cv2
@@ -6,7 +7,8 @@ import numpy as np
 import pytest
 
 from prooflens.synthetic import reference_image
-from prooflens.video import VideoSettings, inspect_video, sampling_indices, score_frame, select_keyframes
+from prooflens.video import (VideoSettings, appearance_distance, inspect_video, sampling_indices,
+                            score_frame, select_keyframes)
 
 
 def write_mp4(path: Path, frames: list[np.ndarray], fps: float = 10):
@@ -59,6 +61,26 @@ def test_static_and_all_bad_selection():
     image = reference_image()
     assert len(select_keyframes([score_frame(image.copy(), i, 10) for i in range(5)])) == 1
     assert select_keyframes([score_frame(np.full_like(image, 0), 0, 10)]) == []
+
+
+def test_selection_recovers_feasible_triplet_blocked_by_best_quality():
+    """A central thumbnail may be too similar to three mutually distinct views."""
+    base = score_frame(reference_image(), 0, 10)
+    points = [(0.5, 0.5), (0.38, 0.5), (0.56, 0.604), (0.56, 0.396)]
+    candidates = [replace(base, index=index, score=1 - index * 0.1,
+                          descriptor=np.tile(np.array(point, dtype=np.float32), (90, 80)))
+                  for index, point in enumerate(points)]
+    settings = VideoSettings(diversity_threshold=0.1)
+    selected = select_keyframes(candidates, settings)
+    assert [frame.index for frame in selected] == [1, 2, 3]
+    assert [frame.index for frame in select_keyframes(candidates, settings)] == [1, 2, 3]
+    assert all(appearance_distance(first, second) > settings.diversity_threshold
+               for index, first in enumerate(selected) for second in selected[index + 1:])
+    # Even fallback selection must not count repeated frame identities as new evidence.
+    duplicated = [replace(frame, index=1 if frame.index == 2 else frame.index) for frame in candidates]
+    distinct = select_keyframes(duplicated, settings)
+    assert len(distinct) == 2
+    assert len({frame.index for frame in distinct}) == 2
 
 
 def test_mp4_sampling_and_native_saved_images(tmp_path):

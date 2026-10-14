@@ -1,5 +1,6 @@
 """Bounded local MP4 sampling; appearance diversity is not physical viewpoint proof."""
 from dataclasses import asdict, dataclass, field
+from itertools import combinations
 import json
 from pathlib import Path
 from time import perf_counter
@@ -102,8 +103,9 @@ def appearance_distance(first: FrameCandidate, second: FrameCandidate) -> float:
 
 
 def select_keyframes(candidates: list[FrameCandidate], settings: VideoSettings = VideoSettings()) -> list[FrameCandidate]:
-    remaining = sorted([candidate for candidate in candidates if candidate.eligible],
-                       key=lambda frame: (-frame.score, frame.index))
+    eligible = sorted([candidate for candidate in candidates if candidate.eligible],
+                      key=lambda frame: (-frame.score, frame.index))
+    remaining = eligible.copy()
     selected: list[FrameCandidate] = []
     if remaining:
         selected.append(remaining.pop(0))
@@ -122,6 +124,30 @@ def select_keyframes(candidates: list[FrameCandidate], settings: VideoSettings =
         winner = max(ranked, key=lambda entry: entry[:2])[2]
         selected.append(winner)
         remaining = [candidate for candidate in remaining if candidate is not winner]
+    if len(selected) < 3:
+        # The best-quality seed can block an otherwise feasible complementary set.
+        # Only repair insufficient greedy results; normal successful selection stays unchanged.
+        # Sampling is bounded to 60 candidates, hence at most 34,220 possible triples.
+        distances = {(i, j): appearance_distance(first, second)
+                     for i, first in enumerate(eligible)
+                     for j, second in enumerate(eligible) if i < j}
+        for size in range(3, len(selected), -1):
+            best_group = None
+            best_utility = -float("inf")
+            for group in combinations(range(len(eligible)), size):
+                frames = [eligible[index] for index in group]
+                if len({frame.index for frame in frames}) != size:
+                    continue
+                minimum = min(distances[pair] for pair in combinations(group, 2))
+                if minimum <= settings.diversity_threshold:
+                    continue
+                utility = ((1 - settings.diversity_weight) * sum(frame.score for frame in frames) / size
+                           + settings.diversity_weight * minimum)
+                if utility > best_utility:
+                    best_group, best_utility = frames, utility
+            if best_group is not None:
+                selected = best_group
+                break
     return selected
 
 
@@ -205,8 +231,8 @@ def inspect_video(path: Path, output: Path, settings: VideoSettings = VideoSetti
             target.write_bytes(encoded.tobytes())
             summary = frame.summary()
             summary.update({"rank": rank, "path": str(target.resolve()),
-                            "selection_reason": "Highest quality eligible frame" if rank == 1 else
-                            "Quality/diversity utility with minimum distance to all previous selections",
+                            "selection_reason": "Highest quality eligible frame in selected complementary set" if rank == 1 else
+                            "Quality/diversity selection with minimum distance to all previous selections",
                             "minimum_appearance_distance": None if rank == 1 else
                             min(appearance_distance(frame, other) for other in selected[:rank - 1])})
             report.selected.append(summary)
