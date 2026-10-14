@@ -2,8 +2,8 @@
 
 ## Mission
 Competition-ready, video-first autonomous warehouse return inspection using substantive OpenCV 5.
-Current authorized deliverable: local MP4 sampling, quality scoring and complementary keyframe selection.
-The previous image-comparison CLI remains supported; autonomous investigation is not implemented yet.
+Current authorization: local video engine, synthetic evaluation, bounded resumable inspection agent
+and integration. Previous image-comparison CLI remains supported. See APPROVAL_POLICY.md for stop points.
 
 ## User journeys
 1. Supply a 5–10-second inspection video, initially targeting 1080p.
@@ -51,4 +51,5 @@ and write JSON with sampled indices/timestamps/metrics, selected frames, reasons
 Select three when sufficient acceptable diverse frames exist; otherwise report explicit insufficiency
 and preserve only available evidence. Do not duplicate frames to satisfy the count.
 Test sampling, scoring, selection, invalid videos and edge cases; inspect generated images and report
-measured processing time. Verify OpenCV 5 compatibility first; stop after this slice.
+measured processing time. Verify OpenCV 5 compatibility first. This slice is complete; latest user
+authorization extends local development through evaluation, agent and integration, without cloud/publication.

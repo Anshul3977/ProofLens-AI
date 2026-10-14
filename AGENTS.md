@@ -5,9 +5,10 @@ The user's ProofLens brief supersedes the unrelated Airbnb instructions in the p
 
 ## Scope and constraints
 - Product is video-first autonomous warehouse return inspection; retain the image comparison tools.
-- Current authorized scope: specification update and local video inspection vertical slice only.
+- Current authorized scope: local video engine, synthetic evaluation/regression suite,
+  bounded resumable inspection agent and integration. Latest attachment supersedes earlier stop rules.
 - Phase numbering follows PLAN.md: Phase 2 evaluation, Phase 3 agent, Phase 4 UI/API, Phase 5 AWS/submission.
-- Stop after video sampling/quality/keyframe artifacts and tests; do not begin another milestone without approval.
+- Continue through these approved workstreams; stop at APPROVAL_POLICY.md checkpoints.
 - OpenCV 5 must do substantive processing. Never substitute OpenCV 4.
 - No authenticity, fraud-certainty, or calibrated physical-dimension claims.
 - Heuristics and synthetic tests do not establish real-world performance.
@@ -37,12 +38,16 @@ Report actual tests, limitations, changed files, and a suggested commit for each
 5. Compare the same cases against the recorded baseline; retain changes only when required gates pass.
 6. Review the diff, update PLAN.md and PROGRESS.md, and report verified outcomes.
 
-Use Builder, Evaluator, Reviewer, and Planner as sequential roles in this session, not parallel agents.
+Native subagents are available and explicitly authorized: at most three implementation workers,
+each in its own Git worktree/feature branch with exclusive ownership in docs/interface-contracts.md.
+Lead owns contracts, shared planning, integration and final review. No concurrent edits to shared files.
 Priority heuristic: expected impact × observed failure frequency / estimated effort.
 Do not weaken thresholds or change labels to improve scores. Separate holdout from tuning data.
 Preserve working behavior and ground every measurement/decision in executed tools.
 Use a local Git checkpoint or isolated branch before risky changes. No automatic push, merge,
 publication, deployment, secret access, or cloud spending. Do not start unattended runners.
+Local verified feature commits and controlled integration onto integration/local-inspection are authorized.
+Merging workstreams into main, external pushing or publication still requires approval.
 
 Additional local checks:
 ```powershell
