@@ -23,7 +23,8 @@ JSON includes source metadata, sample indices/estimated timestamps, quality metr
 selection reasons, configuration, limitations and processing time. Exit 0 means three keyframes
 selected; exit 2 means invalid input or insufficient acceptable/distinct frames.
 Static or poor-quality footage may produce fewer than three; the report requests additional viewpoints.
-No QR/catalog lookup, agent investigation, reference alignment of video frames, UI or AWS is invoked.
+This standalone video CLI selects evidence only. The integrated investigation CLI below performs
+QR/catalog lookup and bounded reference inspection. UI/API and AWS remain unimplemented.
 
 The target is 5–10 seconds at 1080p. Shorter clips are allowed for testing but flagged outside target.
 Default bounds: 100 MiB file, 15 seconds, 900 frames, 3840x2160 pixels, 256 MiB retained samples.
@@ -113,3 +114,48 @@ Run the current synthetic smoke evaluation and local regression gate:
 The gate runs pytest and compares fresh synthetic outcomes against `eval_data/phase1-baseline.json`.
 It does not evaluate an agent or real-world accuracy. CI is defined in `.github/workflows/ci.yml`;
 no remote CI execution has been verified.
+
+## Integrated local video investigation
+
+Generate the video above once, then its matching trusted synthetic catalog:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/generate_demo_catalog.py
+.\.venv\Scripts\python.exe -m prooflens.investigation_cli start sample_data/generated/video-inspection.mp4 --catalog sample_data/generated/demo-catalog/catalog.json --identifier synthetic-geometric-video
+```
+
+Omit `--identifier` for automatic OpenCV QR lookup across selected frames. Unknown/conflicting codes
+require manual resolution. Local catalog format: `{"references":[{"identifier":"product-001","image":"reference.png"}]}`;
+image paths must remain within the catalog directory. Reading QR does not verify authenticity.
+The demo catalog generator refuses to overwrite its existing catalog; reuse it on later runs.
+
+The integrated CLI persists investigation UUID, state, original evidence, overlays, crop inspections
+and trace under `artifacts/investigations/`. It consumes complementary selected views in response to
+an evidence request and after a consistent per-view result. Suspicious findings require human review.
+Reports explicitly identify inspected/uninspected selected frames and limit verdicts to inspected evidence.
+This is a heuristic state machine with lifetime tool-step/recapture limits, not an LLM or unattended coding runner.
+
+Resume a waiting/manual-resolution investigation using its printed ID:
+
+```powershell
+.\.venv\Scripts\python.exe -m prooflens.investigation_cli resume INVESTIGATION_UUID "C:\path\followup.jpg"
+```
+
+For manual resolution also pass `--catalog path/to/catalog.json --identifier product-001`.
+For a custom start workspace, use the same `--workspace` on resume. Recapture cannot replace an established
+product/reference. Human-review findings stay terminal. Operations assume one writer per investigation.
+
+## Development evaluation
+
+```powershell
+.\.venv\Scripts\python.exe scripts/evaluate_suite.py
+.\.venv\Scripts\python.exe scripts/suite_gate.py
+.\.venv\Scripts\python.exe scripts/benchmark_agent.py
+.\.venv\Scripts\python.exe scripts/agent_gate.py
+.\.venv\Scripts\python.exe scripts/benchmark_keyframes.py sample_data/generated/video-inspection.mp4 sample_data/generated/video-inspection.metadata.json
+```
+
+100 seeded synthetic cases are defined, split by original source: 80 development, 20 holdout reserved
+for final evaluation. The default gates evaluate development only; real-world results remain unavailable.
+[Integration report](docs/local-integration-report.md) records measured outcomes, failures and limitations.
+Nothing has been pushed, merged into main, deployed or connected to paid services.

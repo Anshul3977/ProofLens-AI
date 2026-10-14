@@ -56,3 +56,19 @@ def test_invalid_reference_and_duplicate_catalog(tmp_path):
     path.write_text(json.dumps({"references": [{"identifier": "id", "image": "ref.png"}] * 2}))
     with pytest.raises(ValueError, match="Duplicate"):
         ReferenceCatalog(path)
+
+
+def test_multiple_qr_identifiers_in_one_frame_require_manual_resolution(tmp_path):
+    catalog = catalog_at(tmp_path)
+    first, second = qr_image("product-001"), qr_image("unknown")
+    canvas = np.full((max(first.shape[0], second.shape[0]) + 40,
+                      first.shape[1] + second.shape[1] + 60, 3), 255, np.uint8)
+    canvas[20:20 + first.shape[0], 20:20 + first.shape[1]] = first
+    canvas[20:20 + second.shape[0], 40 + first.shape[1]:40 + first.shape[1] + second.shape[1]] = second
+    resolution = identify_reference(canvas, catalog)
+    assert resolution.status == "CONFLICTING_IDENTIFIERS"
+    assert resolution.record is None and resolution.recommended_action
+    from prooflens.investigation import resolve_keyframes
+    aggregate, attempts = resolve_keyframes([({"index": 0}, canvas), ({"index": 1}, first)], catalog, None)
+    assert attempts[1]["result"]["status"] == "RESOLVED"
+    assert aggregate.status == "CONFLICTING_IDENTIFIERS" and aggregate.record is None

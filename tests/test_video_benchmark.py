@@ -3,7 +3,7 @@ import pytest
 
 from prooflens.synthetic import reference_image
 from prooflens.video import score_frame
-from prooflens.video_benchmark import compare_selections
+from prooflens.video_benchmark import benchmark_video, compare_selections
 
 
 def test_comparison_uses_same_candidates_and_reports_bad_selections():
@@ -25,3 +25,24 @@ def test_comparison_uses_same_candidates_and_reports_bad_selections():
 def test_comparison_empty_candidates():
     with pytest.raises(ValueError):
         compare_selections([], {})
+
+
+def test_available_classes_count_only_sampled_candidates():
+    candidate = score_frame(reference_image(), 0, 10)
+    result = compare_selections([candidate], {0: "appearance_A", 1: "appearance_B", 2: "appearance_C"})
+    for method in result["methods"].values():
+        assert method["available_appearance_classes"] == 1
+        assert method["full_video_appearance_classes"] == 3
+
+
+def test_duplicate_ground_truth_indices_rejected(tmp_path, monkeypatch):
+    import json
+    candidate = score_frame(reference_image(), 0, 10)
+    metadata = {"synthetic": True, "source_id": "test", "seed": 1, "width": 640, "height": 480,
+                "frame_count": 1, "frame_labels": [{"index": 0, "label": "appearance_A"}] * 2}
+    path = tmp_path / "metadata.json"
+    path.write_text(json.dumps(metadata))
+    monkeypatch.setattr("prooflens.video_benchmark.sample_video", lambda *args: (
+        {"width": 640, "height": 480, "frame_count": 1}, [candidate]))
+    with pytest.raises(ValueError, match="exactly once"):
+        benchmark_video(tmp_path / "dummy.mp4", path)

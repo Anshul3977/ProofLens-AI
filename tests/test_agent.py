@@ -190,3 +190,30 @@ def test_suspicious_evidence_cannot_bypass_targeted_tool_budget(tmp_path):
 def test_invalid_bounds_rejected(tmp_path, steps, recaptures):
     with pytest.raises(ValueError):
         InspectionAgent(tmp_path, max_steps=steps, max_recaptures=recaptures)
+
+
+@pytest.mark.parametrize("change", ["identifier", "reference"])
+def test_recapture_cannot_change_identity_or_reference(tmp_path, change):
+    image = reference_image()
+    agent = InspectionAgent(tmp_path)
+    initial = agent.start(image, cv2.GaussianBlur(image, (31, 31), 10), "product-A")
+    kwargs = {"identifier": "product-B"} if change == "identifier" else {"reference": cv2.flip(image, 1)}
+    with pytest.raises(ValueError, match="Cannot"):
+        agent.resume(initial.id, image, **kwargs)
+    persisted = agent.load(initial.id)
+    assert persisted.identifier == "product-A" and persisted.recaptures == 0
+    assert persisted.trace == initial.trace
+
+
+def test_additional_selected_view_retains_trace_and_detects_later_difference(tmp_path):
+    image = reference_image()
+    agent = InspectionAgent(tmp_path)
+    initial = agent.start(image, image, "product-A")
+    modified = image.copy()
+    modified[280:350, 300:390] = 35
+    result = agent.inspect_additional(initial.id, modified)
+    assert result.id == initial.id and result.trace[:len(initial.trace)] == initial.trace
+    assert result.identifier == "product-A" and result.recaptures == 0
+    assert result.human_review_required and result.verdict == Verdict.SUSPECTED_MISMATCH
+    with pytest.raises(ValueError, match="Additional"):
+        agent.inspect_additional(result.id, image)

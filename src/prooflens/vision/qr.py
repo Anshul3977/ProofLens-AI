@@ -10,7 +10,7 @@ from prooflens.vision.quality import Image, inspect_image_quality
 
 @dataclass
 class ReferenceResolution:
-    status: Literal["RESOLVED", "MISSING_CODE", "UNREADABLE_CODE", "UNKNOWN_IDENTIFIER", "INVALID_IMAGE", "INVALID_REFERENCE"]
+    status: Literal["RESOLVED", "MISSING_CODE", "UNREADABLE_CODE", "UNKNOWN_IDENTIFIER", "INVALID_IMAGE", "INVALID_REFERENCE", "CONFLICTING_IDENTIFIERS"]
     identifier: str | None
     source: Literal["qr", "manual"]
     observations: list[str]
@@ -35,7 +35,21 @@ def identify_reference(image: Image | None, catalog: ReferenceCatalog,
             return ReferenceResolution("INVALID_IMAGE", None, source, ["No valid image for QR detection."],
                                        "Provide a readable identifier photo or manually select the catalog entry.")
         try:
-            identifier, points, _ = cv2.QRCodeDetector().detectAndDecode(image)
+            detector = cv2.QRCodeDetector()
+            _, decoded, points, _ = detector.detectAndDecodeMulti(image)
+            identifiers = sorted({value for value in decoded if value})
+            if len(identifiers) > 1:
+                return ReferenceResolution("CONFLICTING_IDENTIFIERS", None, source,
+                                           ["Multiple distinct QR identifiers decoded in one frame: " + repr(identifiers)],
+                                           "Resolve the product manually; conflicting QR evidence requires review.")
+            if identifiers and any(not value for value in decoded):
+                return ReferenceResolution("UNREADABLE_CODE", None, source,
+                                           ["Some detected QR identifiers were not decoded."],
+                                           "Photograph all identifiers clearly or select the reference manually.")
+            if identifiers:
+                identifier = identifiers[0]
+            else:
+                identifier, points, _ = detector.detectAndDecode(image)
         except cv2.error:
             return ReferenceResolution("UNREADABLE_CODE", None, source, ["OpenCV QR decoding failed."],
                                        "Photograph the QR more clearly or select the reference manually.")

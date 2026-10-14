@@ -21,7 +21,9 @@ def compare_selections(candidates: list[FrameCandidate], frame_labels: dict[int,
         "quality_and_diversity": select_keyframes(candidates, settings),
     }
     results = {}
-    available = {label for label in frame_labels.values() if label.startswith("appearance_")}
+    available = {frame_labels[frame.index] for frame in candidates
+                 if frame_labels[frame.index].startswith("appearance_")}
+    full_video_available = {label for label in frame_labels.values() if label.startswith("appearance_")}
     for name, frames in methods.items():
         classes = [frame_labels[frame.index] for frame in frames]
         covered = {label for label in classes if label.startswith("appearance_")}
@@ -31,6 +33,7 @@ def compare_selections(candidates: list[FrameCandidate], frame_labels: dict[int,
                          "quality_eligibility_precision": sum(frame.eligible for frame in frames) / len(frames) if frames else None,
                          "appearance_classes_covered": len(covered),
                          "available_appearance_classes": len(available),
+                         "full_video_appearance_classes": len(full_video_available),
                          "duplicate_appearance_count": len(classes) - len(set(classes))}
     return {"scope": "labeled_synthetic_appearance_selection", "candidate_count": len(candidates),
             "methods": results, "limitations": [
@@ -47,7 +50,12 @@ def benchmark_video(path: Path, metadata_path: Path, settings: VideoSettings = V
     if (metadata["width"], metadata["height"], metadata["frame_count"]) != (
             labels["width"], labels["height"], labels["frame_count"]):
         raise ValueError("Video disagrees with ground-truth metadata")
-    frame_labels = {entry["index"]: entry["label"] for entry in labels["frame_labels"]}
+    entries = labels["frame_labels"]
+    indices = [entry["index"] for entry in entries]
+    if (len(entries) != metadata["frame_count"] or any(type(index) is not int for index in indices)
+            or len(set(indices)) != len(indices)):
+        raise ValueError("Ground truth must label every source frame exactly once")
+    frame_labels = {entry["index"]: entry["label"] for entry in entries}
     if set(frame_labels) != set(range(metadata["frame_count"])):
         raise ValueError("Ground truth must label every source frame exactly once")
     report = compare_selections(candidates, frame_labels, settings)

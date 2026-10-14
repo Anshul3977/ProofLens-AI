@@ -10,7 +10,8 @@
   Include blur, glare, exposure, perspective, visible modifications and mismatched reference pairs.
   Split by original source/product/session BEFORE augmenting; related derivatives cannot cross splits.
   Report synthetic and real-world results separately; synthetic modifications are not real fraud incidents.
-  The 100-case synthetic suite and real-world set are future work, not generated yet.
+  The 100-case synthetic manifest now exists: 80 development and 20 reserved holdout.
+  Holdout is not rendered/evaluated during this milestone; real-world data remains unavailable.
 
 ## Current Phase 1 smoke protocol
 `scripts/evaluate.py` generates each labeled fixture in memory using a fixed seed, runs the same
@@ -64,3 +65,20 @@ Compare actual recorded baseline results; claimed gains must be reproducible.
 Choose the highest-impact failing category; change one major variable at a time; reject changes failing gates.
 Maximum three unsuccessful repair attempts, then report the limitation and stop.
 No continuous autonomous development or automatic baseline rewriting is enabled.
+
+## Verified local suite and agent gates
+`scripts/evaluate_suite.py` / `scripts/suite_gate.py`: source-grouped seeded manifest,
+actual fixed-pipeline development metrics/failure images, frozen outcome baseline at
+`eval_data/suite_baseline.json`. Run development by default; holdout requires explicit final-evaluation
+authorization and `--split holdout`. Do not tune on it.
+`scripts/benchmark_agent.py` / `scripts/agent_gate.py`: same 80 development images and vision thresholds
+for fixed vision and the actual persisted agent. Baseline at `eval_data/agent_baseline.json`.
+Next-action annotations, candidate mismatch, eligible alignment, abstention/review and latency are measured.
+Instrumented function calls count each actual quality/align/difference API invocation; logical agent
+trace steps reported separately. Candidate metrics are not authenticity/fraud-detection accuracy.
+Agent must require human review on candidate findings. Gates reject changing fingerprints,
+case identities, previously correct next actions, review bypass or unexplained outcome regressions.
+Latency has no numeric gate and no speed gain is claimed.
+`scripts/benchmark_keyframes.py` compares uniform/top-quality/diverse selection on the same
+synthetic candidate set; reports sampled appearance denominator separately from full-video classes.
+No real-world/holdout performance or overall agent accuracy improvement is established.

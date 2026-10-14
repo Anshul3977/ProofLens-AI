@@ -4,6 +4,7 @@
 Competition-ready, video-first autonomous warehouse return inspection using substantive OpenCV 5.
 Current authorization: local video engine, synthetic evaluation, bounded resumable inspection agent
 and integration. Previous image-comparison CLI remains supported. See APPROVAL_POLICY.md for stop points.
+These local components are now implemented; real-world validation, UI/API and AWS remain pending.
 
 ## User journeys
 1. Supply a 5–10-second inspection video, initially targeting 1080p.

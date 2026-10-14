@@ -12,6 +12,30 @@
 - Lead QR/manual trusted catalog tests: 5 passed in 0.28 s; no authenticity claim.
 - Existing historical stop rules above are superseded by this user authorization. Final results follow below.
 
+### Parallel milestone verified completion
+- Actual independent workers completed and committed: video cd0ad6c (43 tests), evaluation8fe230a
+  (50 tests), agent1d38679 (63 tests). Ownership/diffs reviewed; cherry-picked to integration/local-inspection
+  as eb012db, d2ba5cd, 84e4498. No conflicting edits, no main merge/push.
+- Root added trusted QR/manual catalog, video-agent adapters, same-ID follow-up CLI, 100-case
+  development evaluation integration, actual fixed-vs-agent instrumentation and keyframe baselines.
+- Independent read-only reviews reproduced identity/reference substitution, sampled-denominator and
+  duplicate-label bugs, missed later/multi-code QR conflicts and early per-video consistency. Fixed with
+  regressions; review findings and limitations preserved in docs/local-integration-report.md.
+- Final executed quality_gate.py: **92 tests passed in 8.00 s**, old smoke **4/4** unchanged.
+  suite_gate.py: **80/80** development outcomes pass; agent_gate.py: no failures. pip check passed.
+- 100 manifest cases (80 dev,20 holdout) generated deterministically by source; holdout untouched.
+  Identical-image fixed/agent comparison: actions80/80, eligible alignment48/48, candidate precision1.0,
+  recall0.6667, abstention32/80 both. Agent human review16/80 and actual API calls280 vs fixed264.
+- Latest comparison median/p95: fixed30.83/40.53ms, agent39.90/51.93ms. No measured accuracy/speed gain claimed.
+- Actual1080p integrated CLI: all selected indices48,12,38 consumed conditionally; geometry failure changed
+  next action and led to complementary evidence. Finalconsistent within inspected evidence; 3.340s internal time.
+- Keyframe baseline on same24 candidates: uniform1/3 eligible and1/3 appearances; topquality3/3 and2/3;
+  diverse3/3 and3/3. Viewed actual overlay/crop and worker videoPNG evidence; synthetic only.
+- Expanded CI definition includes suite/agent gates; not executed remotely. No new dependencies,
+  credentials, paid resources, AWS, UI/API, learned matching or publication.
+- Worktrees retained with clean worker commits; root integration branch prepared for review.
+  Next recommended milestone: human integration review, then real-video validation and UI/API authorization.
+
 ## October 14, 2026 — Video-first specification upgrade (before implementation)
 - Updated AGENTS.md, PRODUCT_SPEC.md, PLAN.md and EVAL_SPEC.md for warehouse video returns,
   P0/P1/P2 priorities, source-grouped evaluation and immediate video-only acceptance.

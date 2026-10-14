@@ -7,6 +7,7 @@ from pathlib import Path
 from uuid import UUID, uuid4
 
 import cv2
+import numpy as np
 
 from prooflens.config import Settings
 from prooflens.pipeline import read_image, require_opencv5
@@ -111,6 +112,14 @@ class InspectionAgent:
         if investigation.state not in (State.AWAITING_EVIDENCE, State.MANUAL_RESOLUTION):
             raise ValueError("Only investigations requesting evidence or catalog resolution can resume")
         if investigation.state == State.AWAITING_EVIDENCE:
+            if identifier is not None and identifier != investigation.identifier:
+                raise ValueError("Cannot change product identity during recapture")
+            stored = read_image(self._directory(investigation.id) / "reference.png")
+            if stored is None:
+                raise ValueError("Persisted trusted reference is unavailable")
+            if reference is not None and not np.array_equal(reference, stored):
+                raise ValueError("Cannot replace trusted reference during recapture")
+            reference = stored
             if investigation.recaptures >= investigation.policy["max_recaptures"]:
                 return self._save(self._review(investigation, "Recapture limit reached."))
             investigation.recaptures += 1
@@ -118,6 +127,22 @@ class InspectionAgent:
             reference = read_image(self._directory(investigation.id) / "reference.png")
         if identifier is not None:
             investigation.identifier = identifier
+        investigation.state, investigation.verdict = State.INSPECTING, None
+        investigation.request, investigation.human_review_required = None, False
+        return self._run(investigation, reference, inspection)
+
+    def inspect_additional(self, investigation_id: str, inspection: Image) -> Investigation:
+        """Inspect another selected view only after a consistent per-view result.
+
+        Keeps lifetime budget/trace/reference/identity; human-review decisions stay terminal.
+        This is new selected evidence, not a recapture retry or a verdict override.
+        """
+        investigation = self.load(investigation_id)
+        if investigation.state != State.COMPLETE or investigation.verdict != Verdict.CONSISTENT:
+            raise ValueError("Additional selected views require a consistent completed view")
+        reference = read_image(self._directory(investigation.id) / "reference.png")
+        if reference is None:
+            raise ValueError("Persisted trusted reference is unavailable")
         investigation.state, investigation.verdict = State.INSPECTING, None
         investigation.request, investigation.human_review_required = None, False
         return self._run(investigation, reference, inspection)

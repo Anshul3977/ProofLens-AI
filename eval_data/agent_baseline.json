@@ -1,0 +1,3321 @@
+{
+  "scope": "synthetic_development_fixed_vs_agent",
+  "split": "development",
+  "holdout_evaluated": false,
+  "dataset_sha256": "11bb7c32dbd19a40e5024e2316d705913412dc6cd12ddf64e593d4331e49c598",
+  "settings_sha256": "34ac1b96374c74a7f4182d8eac8a2cf87a7b58716681968b3ecc3d7ddd9371ad",
+  "measurement_sha256": "3b88a23859a30ac16bcc0f0467a32513b9150edeeb65de87882d46f5205ddfc4",
+  "opencv": "5.0.0",
+  "cases": [
+    {
+      "id": "source-00-case-00",
+      "source_id": "source-00",
+      "category": "matching",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 601.6885999706574
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 43.005699990317225
+      }
+    },
+    {
+      "id": "source-00-case-01",
+      "source_id": "source-00",
+      "category": "blur",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 4.864300019107759
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 13.136300025507808
+      }
+    },
+    {
+      "id": "source-00-case-02",
+      "source_id": "source-00",
+      "category": "exposure",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 5.044999998062849
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 10.746799991466105
+      }
+    },
+    {
+      "id": "source-00-case-03",
+      "source_id": "source-00",
+      "category": "glare",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 5.11600001482293
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 11.176900006830692
+      }
+    },
+    {
+      "id": "source-00-case-04",
+      "source_id": "source-00",
+      "category": "perspective",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 36.0707999789156
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 46.51030001696199
+      }
+    },
+    {
+      "id": "source-00-case-05",
+      "source_id": "source-00",
+      "category": "visible_difference",
+      "expected_action": "targeted_inspection",
+      "expected_mismatch": true,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 33.17599999718368
+      },
+      "agent": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "state": "human_review",
+        "verdict": "suspected_mismatch",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": true,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 4,
+        "latency_ms": 46.19309998815879
+      }
+    },
+    {
+      "id": "source-00-case-06",
+      "source_id": "source-00",
+      "category": "mismatched_pair",
+      "expected_action": "request_alternative_viewpoint",
+      "expected_mismatch": true,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_alternative_viewpoint",
+        "action_correct": true,
+        "status": "ALIGNMENT_FAILED",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images"
+        ],
+        "latency_ms": 56.510399968829006
+      },
+      "agent": {
+        "action": "request_alternative_viewpoint",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images"
+        ],
+        "logical_trace_steps": 2,
+        "latency_ms": 62.856199976522475
+      }
+    },
+    {
+      "id": "source-00-case-07",
+      "source_id": "source-00",
+      "category": "matching",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 35.39279999677092
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 43.27369999373332
+      }
+    },
+    {
+      "id": "source-00-case-08",
+      "source_id": "source-00",
+      "category": "perspective",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 33.65469997515902
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 43.65710000274703
+      }
+    },
+    {
+      "id": "source-00-case-09",
+      "source_id": "source-00",
+      "category": "visible_difference",
+      "expected_action": "targeted_inspection",
+      "expected_mismatch": true,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 37.131299963220954
+      },
+      "agent": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "state": "human_review",
+        "verdict": "suspected_mismatch",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": true,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 4,
+        "latency_ms": 47.35529999015853
+      }
+    },
+    {
+      "id": "source-01-case-00",
+      "source_id": "source-01",
+      "category": "matching",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 33.94170000683516
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 43.450400000438094
+      }
+    },
+    {
+      "id": "source-01-case-01",
+      "source_id": "source-01",
+      "category": "blur",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 5.171899974811822
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 14.50479996856302
+      }
+    },
+    {
+      "id": "source-01-case-02",
+      "source_id": "source-01",
+      "category": "exposure",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 6.016900006216019
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 11.688200000207871
+      }
+    },
+    {
+      "id": "source-01-case-03",
+      "source_id": "source-01",
+      "category": "glare",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 5.189599993173033
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 11.358499992638826
+      }
+    },
+    {
+      "id": "source-01-case-04",
+      "source_id": "source-01",
+      "category": "perspective",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 32.66889997757971
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 44.16480002691969
+      }
+    },
+    {
+      "id": "source-01-case-05",
+      "source_id": "source-01",
+      "category": "visible_difference",
+      "expected_action": "targeted_inspection",
+      "expected_mismatch": true,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 48.17560000810772
+      },
+      "agent": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "state": "human_review",
+        "verdict": "suspected_mismatch",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": true,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 4,
+        "latency_ms": 45.39069999009371
+      }
+    },
+    {
+      "id": "source-01-case-06",
+      "source_id": "source-01",
+      "category": "mismatched_pair",
+      "expected_action": "request_alternative_viewpoint",
+      "expected_mismatch": true,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_alternative_viewpoint",
+        "action_correct": true,
+        "status": "ALIGNMENT_FAILED",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images"
+        ],
+        "latency_ms": 31.29610000178218
+      },
+      "agent": {
+        "action": "request_alternative_viewpoint",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images"
+        ],
+        "logical_trace_steps": 2,
+        "latency_ms": 39.26890000002459
+      }
+    },
+    {
+      "id": "source-01-case-07",
+      "source_id": "source-01",
+      "category": "matching",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 35.33450001850724
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 41.63319995859638
+      }
+    },
+    {
+      "id": "source-01-case-08",
+      "source_id": "source-01",
+      "category": "perspective",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 33.27979997266084
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 42.42900002282113
+      }
+    },
+    {
+      "id": "source-01-case-09",
+      "source_id": "source-01",
+      "category": "visible_difference",
+      "expected_action": "targeted_inspection",
+      "expected_mismatch": true,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 34.42379995249212
+      },
+      "agent": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "state": "human_review",
+        "verdict": "suspected_mismatch",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": true,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 4,
+        "latency_ms": 45.68469995865598
+      }
+    },
+    {
+      "id": "source-02-case-00",
+      "source_id": "source-02",
+      "category": "matching",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 31.09119995497167
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 43.57540002092719
+      }
+    },
+    {
+      "id": "source-02-case-01",
+      "source_id": "source-02",
+      "category": "blur",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 5.009600019548088
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 14.696699974592775
+      }
+    },
+    {
+      "id": "source-02-case-02",
+      "source_id": "source-02",
+      "category": "exposure",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 5.097700050100684
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 11.088599974755198
+      }
+    },
+    {
+      "id": "source-02-case-03",
+      "source_id": "source-02",
+      "category": "glare",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 5.293400026857853
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 11.187900032382458
+      }
+    },
+    {
+      "id": "source-02-case-04",
+      "source_id": "source-02",
+      "category": "perspective",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 31.772499962244183
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 41.088800004217774
+      }
+    },
+    {
+      "id": "source-02-case-05",
+      "source_id": "source-02",
+      "category": "visible_difference",
+      "expected_action": "targeted_inspection",
+      "expected_mismatch": true,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 32.7019999967888
+      },
+      "agent": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "state": "human_review",
+        "verdict": "suspected_mismatch",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": true,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 4,
+        "latency_ms": 46.54479998862371
+      }
+    },
+    {
+      "id": "source-02-case-06",
+      "source_id": "source-02",
+      "category": "mismatched_pair",
+      "expected_action": "request_alternative_viewpoint",
+      "expected_mismatch": true,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_alternative_viewpoint",
+        "action_correct": true,
+        "status": "ALIGNMENT_FAILED",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images"
+        ],
+        "latency_ms": 22.899099974893034
+      },
+      "agent": {
+        "action": "request_alternative_viewpoint",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images"
+        ],
+        "logical_trace_steps": 2,
+        "latency_ms": 31.88700001919642
+      }
+    },
+    {
+      "id": "source-02-case-07",
+      "source_id": "source-02",
+      "category": "matching",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 33.13289996003732
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 41.24320001574233
+      }
+    },
+    {
+      "id": "source-02-case-08",
+      "source_id": "source-02",
+      "category": "perspective",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 31.56839997973293
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 41.88360000262037
+      }
+    },
+    {
+      "id": "source-02-case-09",
+      "source_id": "source-02",
+      "category": "visible_difference",
+      "expected_action": "targeted_inspection",
+      "expected_mismatch": true,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 34.4032000284642
+      },
+      "agent": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "state": "human_review",
+        "verdict": "suspected_mismatch",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": true,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 4,
+        "latency_ms": 46.48049996467307
+      }
+    },
+    {
+      "id": "source-03-case-00",
+      "source_id": "source-03",
+      "category": "matching",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 32.95940003590658
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 43.95660001318902
+      }
+    },
+    {
+      "id": "source-03-case-01",
+      "source_id": "source-03",
+      "category": "blur",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 5.567800020799041
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 14.587600016966462
+      }
+    },
+    {
+      "id": "source-03-case-02",
+      "source_id": "source-03",
+      "category": "exposure",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 6.201900017913431
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 12.378600018564612
+      }
+    },
+    {
+      "id": "source-03-case-03",
+      "source_id": "source-03",
+      "category": "glare",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 5.571899993810803
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 11.828500020783395
+      }
+    },
+    {
+      "id": "source-03-case-04",
+      "source_id": "source-03",
+      "category": "perspective",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 33.56020001228899
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 47.19519999343902
+      }
+    },
+    {
+      "id": "source-03-case-05",
+      "source_id": "source-03",
+      "category": "visible_difference",
+      "expected_action": "targeted_inspection",
+      "expected_mismatch": true,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 39.439399959519506
+      },
+      "agent": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "state": "human_review",
+        "verdict": "suspected_mismatch",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": true,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 4,
+        "latency_ms": 47.447499993722886
+      }
+    },
+    {
+      "id": "source-03-case-06",
+      "source_id": "source-03",
+      "category": "mismatched_pair",
+      "expected_action": "request_alternative_viewpoint",
+      "expected_mismatch": true,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_alternative_viewpoint",
+        "action_correct": true,
+        "status": "ALIGNMENT_FAILED",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images"
+        ],
+        "latency_ms": 56.46350001916289
+      },
+      "agent": {
+        "action": "request_alternative_viewpoint",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images"
+        ],
+        "logical_trace_steps": 2,
+        "latency_ms": 64.7713000071235
+      }
+    },
+    {
+      "id": "source-03-case-07",
+      "source_id": "source-03",
+      "category": "matching",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 51.81760003324598
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 42.88680001627654
+      }
+    },
+    {
+      "id": "source-03-case-08",
+      "source_id": "source-03",
+      "category": "perspective",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 34.28129997337237
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 42.629399977158755
+      }
+    },
+    {
+      "id": "source-03-case-09",
+      "source_id": "source-03",
+      "category": "visible_difference",
+      "expected_action": "targeted_inspection",
+      "expected_mismatch": true,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 34.111800021491945
+      },
+      "agent": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "state": "human_review",
+        "verdict": "suspected_mismatch",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": true,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 4,
+        "latency_ms": 48.02899999776855
+      }
+    },
+    {
+      "id": "source-04-case-00",
+      "source_id": "source-04",
+      "category": "matching",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 32.3985000140965
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 42.13380004512146
+      }
+    },
+    {
+      "id": "source-04-case-01",
+      "source_id": "source-04",
+      "category": "blur",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 5.134099978022277
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 13.780199980828911
+      }
+    },
+    {
+      "id": "source-04-case-02",
+      "source_id": "source-04",
+      "category": "exposure",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 5.75750001007691
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 12.072400015313178
+      }
+    },
+    {
+      "id": "source-04-case-03",
+      "source_id": "source-04",
+      "category": "glare",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 5.795700009912252
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 12.062599998898804
+      }
+    },
+    {
+      "id": "source-04-case-04",
+      "source_id": "source-04",
+      "category": "perspective",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 32.97300002304837
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 42.37399995326996
+      }
+    },
+    {
+      "id": "source-04-case-05",
+      "source_id": "source-04",
+      "category": "visible_difference",
+      "expected_action": "targeted_inspection",
+      "expected_mismatch": true,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 33.8682999718003
+      },
+      "agent": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "state": "human_review",
+        "verdict": "suspected_mismatch",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": true,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 4,
+        "latency_ms": 53.16910002147779
+      }
+    },
+    {
+      "id": "source-04-case-06",
+      "source_id": "source-04",
+      "category": "mismatched_pair",
+      "expected_action": "request_alternative_viewpoint",
+      "expected_mismatch": true,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_alternative_viewpoint",
+        "action_correct": true,
+        "status": "ALIGNMENT_FAILED",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images"
+        ],
+        "latency_ms": 41.95889999391511
+      },
+      "agent": {
+        "action": "request_alternative_viewpoint",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images"
+        ],
+        "logical_trace_steps": 2,
+        "latency_ms": 49.55850000260398
+      }
+    },
+    {
+      "id": "source-04-case-07",
+      "source_id": "source-04",
+      "category": "matching",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 33.17439998500049
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 43.921299977228045
+      }
+    },
+    {
+      "id": "source-04-case-08",
+      "source_id": "source-04",
+      "category": "perspective",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 32.53999998560175
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 40.62610003165901
+      }
+    },
+    {
+      "id": "source-04-case-09",
+      "source_id": "source-04",
+      "category": "visible_difference",
+      "expected_action": "targeted_inspection",
+      "expected_mismatch": true,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 30.755599960684776
+      },
+      "agent": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "state": "human_review",
+        "verdict": "suspected_mismatch",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": true,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 4,
+        "latency_ms": 43.54600002989173
+      }
+    },
+    {
+      "id": "source-05-case-00",
+      "source_id": "source-05",
+      "category": "matching",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 33.77199999522418
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 43.031100009102374
+      }
+    },
+    {
+      "id": "source-05-case-01",
+      "source_id": "source-05",
+      "category": "blur",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 5.001300014555454
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 14.575499983038753
+      }
+    },
+    {
+      "id": "source-05-case-02",
+      "source_id": "source-05",
+      "category": "exposure",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 5.189099989365786
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 12.071700009983033
+      }
+    },
+    {
+      "id": "source-05-case-03",
+      "source_id": "source-05",
+      "category": "glare",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 5.272499984130263
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 12.263800017535686
+      }
+    },
+    {
+      "id": "source-05-case-04",
+      "source_id": "source-05",
+      "category": "perspective",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 32.653800037223846
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 43.21109998272732
+      }
+    },
+    {
+      "id": "source-05-case-05",
+      "source_id": "source-05",
+      "category": "visible_difference",
+      "expected_action": "targeted_inspection",
+      "expected_mismatch": true,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 32.78790001058951
+      },
+      "agent": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "state": "human_review",
+        "verdict": "suspected_mismatch",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": true,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 4,
+        "latency_ms": 44.757300056517124
+      }
+    },
+    {
+      "id": "source-05-case-06",
+      "source_id": "source-05",
+      "category": "mismatched_pair",
+      "expected_action": "request_alternative_viewpoint",
+      "expected_mismatch": true,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_alternative_viewpoint",
+        "action_correct": true,
+        "status": "ALIGNMENT_FAILED",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images"
+        ],
+        "latency_ms": 25.49540001200512
+      },
+      "agent": {
+        "action": "request_alternative_viewpoint",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images"
+        ],
+        "logical_trace_steps": 2,
+        "latency_ms": 32.43690001545474
+      }
+    },
+    {
+      "id": "source-05-case-07",
+      "source_id": "source-05",
+      "category": "matching",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 34.08869996201247
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 42.83589997794479
+      }
+    },
+    {
+      "id": "source-05-case-08",
+      "source_id": "source-05",
+      "category": "perspective",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 32.671599998138845
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 43.636800022795796
+      }
+    },
+    {
+      "id": "source-05-case-09",
+      "source_id": "source-05",
+      "category": "visible_difference",
+      "expected_action": "targeted_inspection",
+      "expected_mismatch": true,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 34.15799996582791
+      },
+      "agent": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "state": "human_review",
+        "verdict": "suspected_mismatch",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": true,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 4,
+        "latency_ms": 54.9734000233002
+      }
+    },
+    {
+      "id": "source-06-case-00",
+      "source_id": "source-06",
+      "category": "matching",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 94.33590003754944
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 44.432700029574335
+      }
+    },
+    {
+      "id": "source-06-case-01",
+      "source_id": "source-06",
+      "category": "blur",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 5.207600013818592
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 16.2014999659732
+      }
+    },
+    {
+      "id": "source-06-case-02",
+      "source_id": "source-06",
+      "category": "exposure",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 4.785400000400841
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 12.137699988670647
+      }
+    },
+    {
+      "id": "source-06-case-03",
+      "source_id": "source-06",
+      "category": "glare",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 4.667400033213198
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 11.701499985065311
+      }
+    },
+    {
+      "id": "source-06-case-04",
+      "source_id": "source-06",
+      "category": "perspective",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 33.590000006370246
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 43.2643000385724
+      }
+    },
+    {
+      "id": "source-06-case-05",
+      "source_id": "source-06",
+      "category": "visible_difference",
+      "expected_action": "targeted_inspection",
+      "expected_mismatch": true,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 33.370900026056916
+      },
+      "agent": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "state": "human_review",
+        "verdict": "suspected_mismatch",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": true,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 4,
+        "latency_ms": 46.00399994524196
+      }
+    },
+    {
+      "id": "source-06-case-06",
+      "source_id": "source-06",
+      "category": "mismatched_pair",
+      "expected_action": "request_alternative_viewpoint",
+      "expected_mismatch": true,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_alternative_viewpoint",
+        "action_correct": true,
+        "status": "ALIGNMENT_FAILED",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images"
+        ],
+        "latency_ms": 27.076700003817677
+      },
+      "agent": {
+        "action": "request_alternative_viewpoint",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images"
+        ],
+        "logical_trace_steps": 2,
+        "latency_ms": 35.73910001432523
+      }
+    },
+    {
+      "id": "source-06-case-07",
+      "source_id": "source-06",
+      "category": "matching",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 32.60320000117645
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 42.451399960555136
+      }
+    },
+    {
+      "id": "source-06-case-08",
+      "source_id": "source-06",
+      "category": "perspective",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 34.05589994508773
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 43.61220001010224
+      }
+    },
+    {
+      "id": "source-06-case-09",
+      "source_id": "source-06",
+      "category": "visible_difference",
+      "expected_action": "targeted_inspection",
+      "expected_mismatch": true,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 35.283700039144605
+      },
+      "agent": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "state": "human_review",
+        "verdict": "suspected_mismatch",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": true,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 4,
+        "latency_ms": 46.669800009112805
+      }
+    },
+    {
+      "id": "source-07-case-00",
+      "source_id": "source-07",
+      "category": "matching",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 36.212500010151416
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 46.49280000012368
+      }
+    },
+    {
+      "id": "source-07-case-01",
+      "source_id": "source-07",
+      "category": "blur",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 5.51739998627454
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 14.54649999504909
+      }
+    },
+    {
+      "id": "source-07-case-02",
+      "source_id": "source-07",
+      "category": "exposure",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 4.8462999984622
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 12.012300023343414
+      }
+    },
+    {
+      "id": "source-07-case-03",
+      "source_id": "source-07",
+      "category": "glare",
+      "expected_action": "request_retake",
+      "expected_mismatch": false,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_retake",
+        "action_correct": true,
+        "status": "QUALITY_INSUFFICIENT",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "latency_ms": 5.045400001108646
+      },
+      "agent": {
+        "action": "request_retake",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality"
+        ],
+        "logical_trace_steps": 1,
+        "latency_ms": 12.240000010933727
+      }
+    },
+    {
+      "id": "source-07-case-04",
+      "source_id": "source-07",
+      "category": "perspective",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 34.93069997057319
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 43.924300000071526
+      }
+    },
+    {
+      "id": "source-07-case-05",
+      "source_id": "source-07",
+      "category": "visible_difference",
+      "expected_action": "targeted_inspection",
+      "expected_mismatch": true,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 34.425999969244
+      },
+      "agent": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "state": "human_review",
+        "verdict": "suspected_mismatch",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": true,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 4,
+        "latency_ms": 45.64859997481108
+      }
+    },
+    {
+      "id": "source-07-case-06",
+      "source_id": "source-07",
+      "category": "mismatched_pair",
+      "expected_action": "request_alternative_viewpoint",
+      "expected_mismatch": true,
+      "alignment_eligible": false,
+      "fixed": {
+        "action": "request_alternative_viewpoint",
+        "action_correct": true,
+        "status": "ALIGNMENT_FAILED",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images"
+        ],
+        "latency_ms": 36.4364999695681
+      },
+      "agent": {
+        "action": "request_alternative_viewpoint",
+        "action_correct": true,
+        "state": "awaiting_evidence",
+        "verdict": "insufficient_evidence",
+        "candidate_mismatch": false,
+        "alignment_success": false,
+        "abstained": true,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images"
+        ],
+        "logical_trace_steps": 2,
+        "latency_ms": 45.97090004244819
+      }
+    },
+    {
+      "id": "source-07-case-07",
+      "source_id": "source-07",
+      "category": "matching",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 33.22310000658035
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 46.03630001656711
+      }
+    },
+    {
+      "id": "source-07-case-08",
+      "source_id": "source-07",
+      "category": "perspective",
+      "expected_action": "continue_inspection",
+      "expected_mismatch": false,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 33.29789999406785
+      },
+      "agent": {
+        "action": "continue_inspection",
+        "action_correct": true,
+        "state": "complete",
+        "verdict": "consistent_with_reference",
+        "candidate_mismatch": false,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": false,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 3,
+        "latency_ms": 43.876899988390505
+      }
+    },
+    {
+      "id": "source-07-case-09",
+      "source_id": "source-07",
+      "category": "visible_difference",
+      "expected_action": "targeted_inspection",
+      "expected_mismatch": true,
+      "alignment_eligible": true,
+      "fixed": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "status": "DIFFERENCES_AVAILABLE",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": null,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences"
+        ],
+        "latency_ms": 34.141299955081195
+      },
+      "agent": {
+        "action": "targeted_inspection",
+        "action_correct": true,
+        "state": "human_review",
+        "verdict": "suspected_mismatch",
+        "candidate_mismatch": true,
+        "alignment_success": true,
+        "abstained": false,
+        "human_review_required": true,
+        "tool_calls": [
+          "inspect_image_quality",
+          "inspect_image_quality",
+          "align_images",
+          "inspect_differences",
+          "inspect_differences"
+        ],
+        "logical_trace_steps": 4,
+        "latency_ms": 46.73870000988245
+      }
+    }
+  ],
+  "metrics": {
+    "fixed": {
+      "total_cases": 80,
+      "next_action_correct": 80,
+      "candidate_mismatch_precision": 1.0,
+      "candidate_mismatch_recall": 0.6666666666666666,
+      "alignment_success": 48,
+      "alignment_eligible": 48,
+      "abstention_cases": 32,
+      "human_review_cases": null,
+      "latency_ms": {
+        "median": 32.87365002324805,
+        "p95": 52.04989503254181
+      },
+      "actual_vision_tool_calls": {
+        "median": 4.0,
+        "total": 264
+      }
+    },
+    "agent": {
+      "total_cases": 80,
+      "next_action_correct": 80,
+      "candidate_mismatch_precision": 1.0,
+      "candidate_mismatch_recall": 0.6666666666666666,
+      "alignment_success": 48,
+      "alignment_eligible": 48,
+      "abstention_cases": 32,
+      "human_review_cases": 16,
+      "latency_ms": {
+        "median": 42.94625000329688,
+        "p95": 49.73903000354766
+      },
+      "actual_vision_tool_calls": {
+        "median": 4.0,
+        "total": 280
+      }
+    }
+  },
+  "limitations": [
+    "Synthetic candidates are not real fraud incidents; real-world performance unavailable.",
+    "Both systems use identical images and unchanged vision thresholds.",
+    "Fixed vision pipeline performs quality/alignment/differences with safety aborts; no targeted tool or human-review policy.",
+    "API-call counts are instrumented invocations; logical agent trace length is reported separately.",
+    "One pass per case, no warmup; timings include artifact persistence, exclude fixture rendering.",
+    "No overall accuracy or speed improvement is presumed; agent adds targeted work and review handling."
+  ]
+}

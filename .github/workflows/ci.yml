@@ -1,4 +1,4 @@
-name: ProofLens Phase 1 verification
+name: ProofLens local inspection verification
 on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read
@@ -17,3 +17,5 @@ jobs:
       - run: python -m pip check
       - run: python scripts/evaluate.py
       - run: python scripts/quality_gate.py
+      - run: python scripts/suite_gate.py
+      - run: python scripts/agent_gate.py
