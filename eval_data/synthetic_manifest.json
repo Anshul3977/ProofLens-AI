@@ -1,0 +1,2967 @@
+{
+  "dataset_id": "prooflens-synthetic-v1",
+  "provenance": "self-created geometric scenes; synthetic modifications are not fraud incidents",
+  "source_split_policy": "assign original sources before generating derivatives; 8 development / 2 holdout",
+  "cases": [
+    {
+      "id": "source-00-case-00",
+      "source_id": "source-00",
+      "source_seed": 202600,
+      "split": "development",
+      "seed": 5000,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-00-case-01",
+      "source_id": "source-00",
+      "source_seed": 202600,
+      "split": "development",
+      "seed": 5001,
+      "category": "blur",
+      "transformations": [
+        {
+          "type": "blur",
+          "kernel": 31,
+          "sigma": 10
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-00-case-02",
+      "source_id": "source-00",
+      "source_seed": 202600,
+      "split": "development",
+      "seed": 5002,
+      "category": "exposure",
+      "transformations": [
+        {
+          "type": "exposure",
+          "gain": 0.08
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-00-case-03",
+      "source_id": "source-00",
+      "source_seed": 202600,
+      "split": "development",
+      "seed": 5003,
+      "category": "glare",
+      "transformations": [
+        {
+          "type": "glare",
+          "rect": [
+            80,
+            60,
+            220,
+            100
+          ],
+          "bgr": [
+            255,
+            255,
+            255
+          ]
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-00-case-04",
+      "source_id": "source-00",
+      "source_seed": 202600,
+      "split": "development",
+      "seed": 5004,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              12,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-00-case-05",
+      "source_id": "source-00",
+      "source_seed": 202600,
+      "split": "development",
+      "seed": 5005,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            310,
+            210,
+            60,
+            50
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            310,
+            210,
+            60,
+            50
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-00-case-06",
+      "source_id": "source-00",
+      "source_seed": 202600,
+      "split": "development",
+      "seed": 5006,
+      "category": "mismatched_pair",
+      "transformations": [],
+      "expected_status": "ALIGNMENT_FAILED",
+      "expected_next_action": "request_alternative_viewpoint",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      },
+      "inspection_source_id": "source-01",
+      "inspection_source_seed": 202601
+    },
+    {
+      "id": "source-00-case-07",
+      "source_id": "source-00",
+      "source_seed": 202600,
+      "split": "development",
+      "seed": 5007,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-00-case-08",
+      "source_id": "source-00",
+      "source_seed": 202600,
+      "split": "development",
+      "seed": 5008,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              12,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-00-case-09",
+      "source_id": "source-00",
+      "source_seed": 202600,
+      "split": "development",
+      "seed": 5009,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            100,
+            70,
+            55,
+            45
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            100,
+            70,
+            55,
+            45
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-01-case-00",
+      "source_id": "source-01",
+      "source_seed": 202601,
+      "split": "development",
+      "seed": 5100,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-01-case-01",
+      "source_id": "source-01",
+      "source_seed": 202601,
+      "split": "development",
+      "seed": 5101,
+      "category": "blur",
+      "transformations": [
+        {
+          "type": "blur",
+          "kernel": 31,
+          "sigma": 10
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-01-case-02",
+      "source_id": "source-01",
+      "source_seed": 202601,
+      "split": "development",
+      "seed": 5102,
+      "category": "exposure",
+      "transformations": [
+        {
+          "type": "exposure",
+          "gain": 4.0
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-01-case-03",
+      "source_id": "source-01",
+      "source_seed": 202601,
+      "split": "development",
+      "seed": 5103,
+      "category": "glare",
+      "transformations": [
+        {
+          "type": "glare",
+          "rect": [
+            80,
+            60,
+            220,
+            100
+          ],
+          "bgr": [
+            255,
+            255,
+            255
+          ]
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-01-case-04",
+      "source_id": "source-01",
+      "source_seed": 202601,
+      "split": "development",
+      "seed": 5104,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              13,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-01-case-05",
+      "source_id": "source-01",
+      "source_seed": 202601,
+      "split": "development",
+      "seed": 5105,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            310,
+            210,
+            60,
+            50
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            310,
+            210,
+            60,
+            50
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-01-case-06",
+      "source_id": "source-01",
+      "source_seed": 202601,
+      "split": "development",
+      "seed": 5106,
+      "category": "mismatched_pair",
+      "transformations": [],
+      "expected_status": "ALIGNMENT_FAILED",
+      "expected_next_action": "request_alternative_viewpoint",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      },
+      "inspection_source_id": "source-02",
+      "inspection_source_seed": 202602
+    },
+    {
+      "id": "source-01-case-07",
+      "source_id": "source-01",
+      "source_seed": 202601,
+      "split": "development",
+      "seed": 5107,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-01-case-08",
+      "source_id": "source-01",
+      "source_seed": 202601,
+      "split": "development",
+      "seed": 5108,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              13,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-01-case-09",
+      "source_id": "source-01",
+      "source_seed": 202601,
+      "split": "development",
+      "seed": 5109,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            100,
+            70,
+            55,
+            45
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            100,
+            70,
+            55,
+            45
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-02-case-00",
+      "source_id": "source-02",
+      "source_seed": 202602,
+      "split": "development",
+      "seed": 5200,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-02-case-01",
+      "source_id": "source-02",
+      "source_seed": 202602,
+      "split": "development",
+      "seed": 5201,
+      "category": "blur",
+      "transformations": [
+        {
+          "type": "blur",
+          "kernel": 31,
+          "sigma": 10
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-02-case-02",
+      "source_id": "source-02",
+      "source_seed": 202602,
+      "split": "development",
+      "seed": 5202,
+      "category": "exposure",
+      "transformations": [
+        {
+          "type": "exposure",
+          "gain": 0.08
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-02-case-03",
+      "source_id": "source-02",
+      "source_seed": 202602,
+      "split": "development",
+      "seed": 5203,
+      "category": "glare",
+      "transformations": [
+        {
+          "type": "glare",
+          "rect": [
+            80,
+            60,
+            220,
+            100
+          ],
+          "bgr": [
+            255,
+            255,
+            255
+          ]
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-02-case-04",
+      "source_id": "source-02",
+      "source_seed": 202602,
+      "split": "development",
+      "seed": 5204,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              14,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-02-case-05",
+      "source_id": "source-02",
+      "source_seed": 202602,
+      "split": "development",
+      "seed": 5205,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            310,
+            210,
+            60,
+            50
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            310,
+            210,
+            60,
+            50
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-02-case-06",
+      "source_id": "source-02",
+      "source_seed": 202602,
+      "split": "development",
+      "seed": 5206,
+      "category": "mismatched_pair",
+      "transformations": [],
+      "expected_status": "ALIGNMENT_FAILED",
+      "expected_next_action": "request_alternative_viewpoint",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      },
+      "inspection_source_id": "source-03",
+      "inspection_source_seed": 202603
+    },
+    {
+      "id": "source-02-case-07",
+      "source_id": "source-02",
+      "source_seed": 202602,
+      "split": "development",
+      "seed": 5207,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-02-case-08",
+      "source_id": "source-02",
+      "source_seed": 202602,
+      "split": "development",
+      "seed": 5208,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              14,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-02-case-09",
+      "source_id": "source-02",
+      "source_seed": 202602,
+      "split": "development",
+      "seed": 5209,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            100,
+            70,
+            55,
+            45
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            100,
+            70,
+            55,
+            45
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-03-case-00",
+      "source_id": "source-03",
+      "source_seed": 202603,
+      "split": "development",
+      "seed": 5300,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-03-case-01",
+      "source_id": "source-03",
+      "source_seed": 202603,
+      "split": "development",
+      "seed": 5301,
+      "category": "blur",
+      "transformations": [
+        {
+          "type": "blur",
+          "kernel": 31,
+          "sigma": 10
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-03-case-02",
+      "source_id": "source-03",
+      "source_seed": 202603,
+      "split": "development",
+      "seed": 5302,
+      "category": "exposure",
+      "transformations": [
+        {
+          "type": "exposure",
+          "gain": 4.0
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-03-case-03",
+      "source_id": "source-03",
+      "source_seed": 202603,
+      "split": "development",
+      "seed": 5303,
+      "category": "glare",
+      "transformations": [
+        {
+          "type": "glare",
+          "rect": [
+            80,
+            60,
+            220,
+            100
+          ],
+          "bgr": [
+            255,
+            255,
+            255
+          ]
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-03-case-04",
+      "source_id": "source-03",
+      "source_seed": 202603,
+      "split": "development",
+      "seed": 5304,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              15,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-03-case-05",
+      "source_id": "source-03",
+      "source_seed": 202603,
+      "split": "development",
+      "seed": 5305,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            310,
+            210,
+            60,
+            50
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            310,
+            210,
+            60,
+            50
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-03-case-06",
+      "source_id": "source-03",
+      "source_seed": 202603,
+      "split": "development",
+      "seed": 5306,
+      "category": "mismatched_pair",
+      "transformations": [],
+      "expected_status": "ALIGNMENT_FAILED",
+      "expected_next_action": "request_alternative_viewpoint",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      },
+      "inspection_source_id": "source-04",
+      "inspection_source_seed": 202604
+    },
+    {
+      "id": "source-03-case-07",
+      "source_id": "source-03",
+      "source_seed": 202603,
+      "split": "development",
+      "seed": 5307,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-03-case-08",
+      "source_id": "source-03",
+      "source_seed": 202603,
+      "split": "development",
+      "seed": 5308,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              15,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-03-case-09",
+      "source_id": "source-03",
+      "source_seed": 202603,
+      "split": "development",
+      "seed": 5309,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            100,
+            70,
+            55,
+            45
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            100,
+            70,
+            55,
+            45
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-04-case-00",
+      "source_id": "source-04",
+      "source_seed": 202604,
+      "split": "development",
+      "seed": 5400,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-04-case-01",
+      "source_id": "source-04",
+      "source_seed": 202604,
+      "split": "development",
+      "seed": 5401,
+      "category": "blur",
+      "transformations": [
+        {
+          "type": "blur",
+          "kernel": 31,
+          "sigma": 10
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-04-case-02",
+      "source_id": "source-04",
+      "source_seed": 202604,
+      "split": "development",
+      "seed": 5402,
+      "category": "exposure",
+      "transformations": [
+        {
+          "type": "exposure",
+          "gain": 0.08
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-04-case-03",
+      "source_id": "source-04",
+      "source_seed": 202604,
+      "split": "development",
+      "seed": 5403,
+      "category": "glare",
+      "transformations": [
+        {
+          "type": "glare",
+          "rect": [
+            80,
+            60,
+            220,
+            100
+          ],
+          "bgr": [
+            255,
+            255,
+            255
+          ]
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-04-case-04",
+      "source_id": "source-04",
+      "source_seed": 202604,
+      "split": "development",
+      "seed": 5404,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              16,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-04-case-05",
+      "source_id": "source-04",
+      "source_seed": 202604,
+      "split": "development",
+      "seed": 5405,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            310,
+            210,
+            60,
+            50
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            310,
+            210,
+            60,
+            50
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-04-case-06",
+      "source_id": "source-04",
+      "source_seed": 202604,
+      "split": "development",
+      "seed": 5406,
+      "category": "mismatched_pair",
+      "transformations": [],
+      "expected_status": "ALIGNMENT_FAILED",
+      "expected_next_action": "request_alternative_viewpoint",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      },
+      "inspection_source_id": "source-05",
+      "inspection_source_seed": 202605
+    },
+    {
+      "id": "source-04-case-07",
+      "source_id": "source-04",
+      "source_seed": 202604,
+      "split": "development",
+      "seed": 5407,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-04-case-08",
+      "source_id": "source-04",
+      "source_seed": 202604,
+      "split": "development",
+      "seed": 5408,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              16,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-04-case-09",
+      "source_id": "source-04",
+      "source_seed": 202604,
+      "split": "development",
+      "seed": 5409,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            100,
+            70,
+            55,
+            45
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            100,
+            70,
+            55,
+            45
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-05-case-00",
+      "source_id": "source-05",
+      "source_seed": 202605,
+      "split": "development",
+      "seed": 5500,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-05-case-01",
+      "source_id": "source-05",
+      "source_seed": 202605,
+      "split": "development",
+      "seed": 5501,
+      "category": "blur",
+      "transformations": [
+        {
+          "type": "blur",
+          "kernel": 31,
+          "sigma": 10
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-05-case-02",
+      "source_id": "source-05",
+      "source_seed": 202605,
+      "split": "development",
+      "seed": 5502,
+      "category": "exposure",
+      "transformations": [
+        {
+          "type": "exposure",
+          "gain": 4.0
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-05-case-03",
+      "source_id": "source-05",
+      "source_seed": 202605,
+      "split": "development",
+      "seed": 5503,
+      "category": "glare",
+      "transformations": [
+        {
+          "type": "glare",
+          "rect": [
+            80,
+            60,
+            220,
+            100
+          ],
+          "bgr": [
+            255,
+            255,
+            255
+          ]
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-05-case-04",
+      "source_id": "source-05",
+      "source_seed": 202605,
+      "split": "development",
+      "seed": 5504,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              17,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-05-case-05",
+      "source_id": "source-05",
+      "source_seed": 202605,
+      "split": "development",
+      "seed": 5505,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            310,
+            210,
+            60,
+            50
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            310,
+            210,
+            60,
+            50
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-05-case-06",
+      "source_id": "source-05",
+      "source_seed": 202605,
+      "split": "development",
+      "seed": 5506,
+      "category": "mismatched_pair",
+      "transformations": [],
+      "expected_status": "ALIGNMENT_FAILED",
+      "expected_next_action": "request_alternative_viewpoint",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      },
+      "inspection_source_id": "source-06",
+      "inspection_source_seed": 202606
+    },
+    {
+      "id": "source-05-case-07",
+      "source_id": "source-05",
+      "source_seed": 202605,
+      "split": "development",
+      "seed": 5507,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-05-case-08",
+      "source_id": "source-05",
+      "source_seed": 202605,
+      "split": "development",
+      "seed": 5508,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              17,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-05-case-09",
+      "source_id": "source-05",
+      "source_seed": 202605,
+      "split": "development",
+      "seed": 5509,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            100,
+            70,
+            55,
+            45
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            100,
+            70,
+            55,
+            45
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-06-case-00",
+      "source_id": "source-06",
+      "source_seed": 202606,
+      "split": "development",
+      "seed": 5600,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-06-case-01",
+      "source_id": "source-06",
+      "source_seed": 202606,
+      "split": "development",
+      "seed": 5601,
+      "category": "blur",
+      "transformations": [
+        {
+          "type": "blur",
+          "kernel": 31,
+          "sigma": 10
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-06-case-02",
+      "source_id": "source-06",
+      "source_seed": 202606,
+      "split": "development",
+      "seed": 5602,
+      "category": "exposure",
+      "transformations": [
+        {
+          "type": "exposure",
+          "gain": 0.08
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-06-case-03",
+      "source_id": "source-06",
+      "source_seed": 202606,
+      "split": "development",
+      "seed": 5603,
+      "category": "glare",
+      "transformations": [
+        {
+          "type": "glare",
+          "rect": [
+            80,
+            60,
+            220,
+            100
+          ],
+          "bgr": [
+            255,
+            255,
+            255
+          ]
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-06-case-04",
+      "source_id": "source-06",
+      "source_seed": 202606,
+      "split": "development",
+      "seed": 5604,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              18,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-06-case-05",
+      "source_id": "source-06",
+      "source_seed": 202606,
+      "split": "development",
+      "seed": 5605,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            310,
+            210,
+            60,
+            50
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            310,
+            210,
+            60,
+            50
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-06-case-06",
+      "source_id": "source-06",
+      "source_seed": 202606,
+      "split": "development",
+      "seed": 5606,
+      "category": "mismatched_pair",
+      "transformations": [],
+      "expected_status": "ALIGNMENT_FAILED",
+      "expected_next_action": "request_alternative_viewpoint",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      },
+      "inspection_source_id": "source-07",
+      "inspection_source_seed": 202607
+    },
+    {
+      "id": "source-06-case-07",
+      "source_id": "source-06",
+      "source_seed": 202606,
+      "split": "development",
+      "seed": 5607,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-06-case-08",
+      "source_id": "source-06",
+      "source_seed": 202606,
+      "split": "development",
+      "seed": 5608,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              18,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-06-case-09",
+      "source_id": "source-06",
+      "source_seed": 202606,
+      "split": "development",
+      "seed": 5609,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            100,
+            70,
+            55,
+            45
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            100,
+            70,
+            55,
+            45
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-07-case-00",
+      "source_id": "source-07",
+      "source_seed": 202607,
+      "split": "development",
+      "seed": 5700,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-07-case-01",
+      "source_id": "source-07",
+      "source_seed": 202607,
+      "split": "development",
+      "seed": 5701,
+      "category": "blur",
+      "transformations": [
+        {
+          "type": "blur",
+          "kernel": 31,
+          "sigma": 10
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-07-case-02",
+      "source_id": "source-07",
+      "source_seed": 202607,
+      "split": "development",
+      "seed": 5702,
+      "category": "exposure",
+      "transformations": [
+        {
+          "type": "exposure",
+          "gain": 4.0
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-07-case-03",
+      "source_id": "source-07",
+      "source_seed": 202607,
+      "split": "development",
+      "seed": 5703,
+      "category": "glare",
+      "transformations": [
+        {
+          "type": "glare",
+          "rect": [
+            80,
+            60,
+            220,
+            100
+          ],
+          "bgr": [
+            255,
+            255,
+            255
+          ]
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-07-case-04",
+      "source_id": "source-07",
+      "source_seed": 202607,
+      "split": "development",
+      "seed": 5704,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              19,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-07-case-05",
+      "source_id": "source-07",
+      "source_seed": 202607,
+      "split": "development",
+      "seed": 5705,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            310,
+            210,
+            60,
+            50
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            310,
+            210,
+            60,
+            50
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-07-case-06",
+      "source_id": "source-07",
+      "source_seed": 202607,
+      "split": "development",
+      "seed": 5706,
+      "category": "mismatched_pair",
+      "transformations": [],
+      "expected_status": "ALIGNMENT_FAILED",
+      "expected_next_action": "request_alternative_viewpoint",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      },
+      "inspection_source_id": "source-00",
+      "inspection_source_seed": 202600
+    },
+    {
+      "id": "source-07-case-07",
+      "source_id": "source-07",
+      "source_seed": 202607,
+      "split": "development",
+      "seed": 5707,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-07-case-08",
+      "source_id": "source-07",
+      "source_seed": 202607,
+      "split": "development",
+      "seed": 5708,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              19,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-07-case-09",
+      "source_id": "source-07",
+      "source_seed": 202607,
+      "split": "development",
+      "seed": 5709,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            100,
+            70,
+            55,
+            45
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            100,
+            70,
+            55,
+            45
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-08-case-00",
+      "source_id": "source-08",
+      "source_seed": 202608,
+      "split": "holdout",
+      "seed": 5800,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-08-case-01",
+      "source_id": "source-08",
+      "source_seed": 202608,
+      "split": "holdout",
+      "seed": 5801,
+      "category": "blur",
+      "transformations": [
+        {
+          "type": "blur",
+          "kernel": 31,
+          "sigma": 10
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-08-case-02",
+      "source_id": "source-08",
+      "source_seed": 202608,
+      "split": "holdout",
+      "seed": 5802,
+      "category": "exposure",
+      "transformations": [
+        {
+          "type": "exposure",
+          "gain": 0.08
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-08-case-03",
+      "source_id": "source-08",
+      "source_seed": 202608,
+      "split": "holdout",
+      "seed": 5803,
+      "category": "glare",
+      "transformations": [
+        {
+          "type": "glare",
+          "rect": [
+            80,
+            60,
+            220,
+            100
+          ],
+          "bgr": [
+            255,
+            255,
+            255
+          ]
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-08-case-04",
+      "source_id": "source-08",
+      "source_seed": 202608,
+      "split": "holdout",
+      "seed": 5804,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              20,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-08-case-05",
+      "source_id": "source-08",
+      "source_seed": 202608,
+      "split": "holdout",
+      "seed": 5805,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            310,
+            210,
+            60,
+            50
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            310,
+            210,
+            60,
+            50
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-08-case-06",
+      "source_id": "source-08",
+      "source_seed": 202608,
+      "split": "holdout",
+      "seed": 5806,
+      "category": "mismatched_pair",
+      "transformations": [],
+      "expected_status": "ALIGNMENT_FAILED",
+      "expected_next_action": "request_alternative_viewpoint",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      },
+      "inspection_source_id": "source-09",
+      "inspection_source_seed": 202609
+    },
+    {
+      "id": "source-08-case-07",
+      "source_id": "source-08",
+      "source_seed": 202608,
+      "split": "holdout",
+      "seed": 5807,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-08-case-08",
+      "source_id": "source-08",
+      "source_seed": 202608,
+      "split": "holdout",
+      "seed": 5808,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              20,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-08-case-09",
+      "source_id": "source-08",
+      "source_seed": 202608,
+      "split": "holdout",
+      "seed": 5809,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            100,
+            70,
+            55,
+            45
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            100,
+            70,
+            55,
+            45
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-09-case-00",
+      "source_id": "source-09",
+      "source_seed": 202609,
+      "split": "holdout",
+      "seed": 5900,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-09-case-01",
+      "source_id": "source-09",
+      "source_seed": 202609,
+      "split": "holdout",
+      "seed": 5901,
+      "category": "blur",
+      "transformations": [
+        {
+          "type": "blur",
+          "kernel": 31,
+          "sigma": 10
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-09-case-02",
+      "source_id": "source-09",
+      "source_seed": 202609,
+      "split": "holdout",
+      "seed": 5902,
+      "category": "exposure",
+      "transformations": [
+        {
+          "type": "exposure",
+          "gain": 4.0
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-09-case-03",
+      "source_id": "source-09",
+      "source_seed": 202609,
+      "split": "holdout",
+      "seed": 5903,
+      "category": "glare",
+      "transformations": [
+        {
+          "type": "glare",
+          "rect": [
+            80,
+            60,
+            220,
+            100
+          ],
+          "bgr": [
+            255,
+            255,
+            255
+          ]
+        }
+      ],
+      "expected_status": "QUALITY_INSUFFICIENT",
+      "expected_next_action": "request_retake",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": false,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-09-case-04",
+      "source_id": "source-09",
+      "source_seed": 202609,
+      "split": "holdout",
+      "seed": 5904,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              21,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-09-case-05",
+      "source_id": "source-09",
+      "source_seed": 202609,
+      "split": "holdout",
+      "seed": 5905,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            310,
+            210,
+            60,
+            50
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            310,
+            210,
+            60,
+            50
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-09-case-06",
+      "source_id": "source-09",
+      "source_seed": 202609,
+      "split": "holdout",
+      "seed": 5906,
+      "category": "mismatched_pair",
+      "transformations": [],
+      "expected_status": "ALIGNMENT_FAILED",
+      "expected_next_action": "request_alternative_viewpoint",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": false,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      },
+      "inspection_source_id": "source-08",
+      "inspection_source_seed": 202608
+    },
+    {
+      "id": "source-09-case-07",
+      "source_id": "source-09",
+      "source_seed": 202609,
+      "split": "holdout",
+      "seed": 5907,
+      "category": "matching",
+      "transformations": [],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-09-case-08",
+      "source_id": "source-09",
+      "source_seed": 202609,
+      "split": "holdout",
+      "seed": 5908,
+      "category": "perspective",
+      "transformations": [
+        {
+          "type": "perspective",
+          "corner_offsets": [
+            [
+              21,
+              8
+            ],
+            [
+              -12,
+              10
+            ],
+            [
+              -5,
+              -10
+            ],
+            [
+              8,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "continue_inspection",
+      "ground_truth": {
+        "mismatch": false,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [],
+        "region_coordinate_space": "reference_pixels"
+      }
+    },
+    {
+      "id": "source-09-case-09",
+      "source_id": "source-09",
+      "source_seed": 202609,
+      "split": "holdout",
+      "seed": 5909,
+      "category": "visible_difference",
+      "transformations": [
+        {
+          "type": "visible_difference",
+          "rect": [
+            100,
+            70,
+            55,
+            45
+          ],
+          "bgr": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "expected_status": "DIFFERENCES_AVAILABLE",
+      "expected_next_action": "targeted_inspection",
+      "ground_truth": {
+        "mismatch": true,
+        "quality_acceptable": true,
+        "alignment_eligible": true,
+        "region_rectangles": [
+          [
+            100,
+            70,
+            55,
+            45
+          ]
+        ],
+        "region_coordinate_space": "reference_pixels"
+      }
+    }
+  ]
+}
