@@ -158,4 +158,5 @@ product/reference. Human-review findings stay terminal. Operations assume one wr
 100 seeded synthetic cases are defined, split by original source: 80 development, 20 holdout reserved
 for final evaluation. The default gates evaluate development only; real-world results remain unavailable.
 [Integration report](docs/local-integration-report.md) records measured outcomes, failures and limitations.
-Nothing has been pushed, merged into main, deployed or connected to paid services.
+The verified history is published on `main` at [Anshul3977/ProofLens-AI](https://github.com/Anshul3977/ProofLens-AI).
+AWS deployment and paid-service integration remain unimplemented; remote CI outcomes are not claimed here.
